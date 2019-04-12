@@ -1,0 +1,229 @@
+{
+    "tables": {
+        "admin": {
+            "tableName": "admin",
+            "schema": {
+                "idAdmin": {
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "idAdmin",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "email": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": ""
+                    },
+                    "field": "email",
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "password": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": ""
+                    },
+                    "field": "password",
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "name": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": ""
+                    },
+                    "field": "name",
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "is_super": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": 0
+                    },
+                    "field": "is_super",
+                    "seqType": "Sequelize.TINYINT"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "auth_token": {
+            "tableName": "auth_token",
+            "schema": {
+                "idAuth_Token": {
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "idAuth_Token",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "user_id": {
+                    "allowNull": false,
+                    "field": "user_id",
+                    "references": {
+                        "model": "user",
+                        "key": "user_id"
+                    },
+                    "onDelete": "NO ACTION",
+                    "onUpdate": "CASCADE",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "token": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": ""
+                    },
+                    "field": "token",
+                    "seqType": "Sequelize.STRING"
+                },
+                "expired": {
+                    "field": "expired",
+                    "seqType": "Sequelize.DATE"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "language": {
+            "tableName": "language",
+            "schema": {
+                "idLanguage": {
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "idLanguage",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "name": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": ""
+                    },
+                    "field": "name",
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "status": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": 1
+                    },
+                    "field": "status",
+                    "seqType": "Sequelize.TINYINT"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "user": {
+            "tableName": "user",
+            "schema": {
+                "user_id": {
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "user_id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "fname": {
+                    "allowNull": false,
+                    "field": "fname",
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "lname": {
+                    "allowNull": false,
+                    "field": "lname",
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "email": {
+                    "allowNull": false,
+                    "field": "email",
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "password": {
+                    "allowNull": false,
+                    "field": "password",
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "mobile": {
+                    "allowNull": false,
+                    "field": "mobile",
+                    "seqType": "Sequelize.STRING(100)"
+                },
+                "mobile_verified": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": 0
+                    },
+                    "field": "mobile_verified",
+                    "seqType": "Sequelize.TINYINT"
+                },
+                "email_verified": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": 0
+                    },
+                    "field": "email_verified",
+                    "seqType": "Sequelize.TINYINT"
+                },
+                "mobile_code": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": ""
+                    },
+                    "field": "mobile_code",
+                    "seqType": "Sequelize.STRING(20)"
+                },
+                "email_code": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": ""
+                    },
+                    "field": "email_code",
+                    "seqType": "Sequelize.STRING(20)"
+                },
+                "user_status": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": 1
+                    },
+                    "field": "user_status",
+                    "seqType": "Sequelize.TINYINT"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 1
+}

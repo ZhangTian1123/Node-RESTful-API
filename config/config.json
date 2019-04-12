@@ -1,0 +1,47 @@
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "Backend_dev_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "Backend_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+
+  "pagination":{
+    "page_limit" : 10
+  },
+  "auth_token": {
+    "expired_duration": 30
+  },
+  "jwt": {
+    "secret_key": "Backend2019!",
+    "expired_duration": "1h"
+  },
+  "crypto": {
+    "algorithm": "aes256",
+    "key": "Backend2019!"
+  },
+  "sendgrid": {
+    "SENDER_EMAIL": "",
+    "SENDGRID_API_KEY": ""
+  },
+
+  "status":{
+    "User_Status" :{
+      "Blocked" : 0,
+      "Active" : 1,
+      "Suspended" : 2
+    },    
+    "Language" :{
+      "Blocked" : 0,
+      "Active" : 1
+    }
+  }
+}
