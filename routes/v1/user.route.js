@@ -15,11 +15,11 @@ function initializeRoutes(app) {
     app.use('/api', bodyParser.json());
 
      // Api for User.
-     //change user route
+     
     app.get('/api/login', User.login);  // user login
     app.post('/api/signup', User.signup);   // sign up.        
     app.get('/api/user', Auth.checkAgent, User.getUserDetail); // get detail data of user
+
     
-    
-    
+        // change master
 }
