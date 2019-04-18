@@ -19,5 +19,7 @@ function initializeRoutes(app) {
     app.get('/api/login', User.login);  // user login
     app.post('/api/signup', User.signup);   // sign up.        
     app.get('/api/user', Auth.checkAgent, User.getUserDetail); // get detail data of user
-        
+    
+    //change user route
+    
 }
